@@ -524,6 +524,10 @@ div.headline h1 {
     #container-school .left-pane-content {
 	width:100%;
 	}
+
+	#container-eventa ul li div.wrapper{
+		padding:0 0 20vh 0;
+	}
 }
 
 
@@ -634,16 +638,21 @@ div.headline h1 {
 		}
 
 		.center-content .center-bottom ul li .headline{
-			font-size: 70%;
+			margin-top:10vh;
+			width:100vw;
 		}
 
 		#content {
-			position: absolute; bottom: 5%; width: 90%; left: 19%;
+			position: absolute;top:30%; width: 100%; left: 0%;
 		}
 		#content .content {
-			display: none;
+			width:90vw;
+			margin:0 0 0 5vw;
 		}
-
+		#content img{
+			position:absolute;
+			left:20%;
+		}
 
 		#header-logo img{
 			width: 60%;
