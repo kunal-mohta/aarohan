@@ -79,7 +79,8 @@
 				<li id="navbraniac" style="cursor: pointer;"><a href="#slide-4"> <div class="ring"></div> <div class="fix"> ROUNDS</div></a></li>
 				<li id="navcodevoyage" style="cursor: pointer;"><a href="#slide-5"> <div class="ring"></div> <div class="fix"> TIMELINE</div></a> </li>
 				<li id="navapogee" style="cursor: pointer;"> <div class="ring"></div> <div class="fix"><a href="http://www.bits-apogee.org/"> APOGEE 2018</a> </div> </li>
-				<li id="navcontact" style="cursor: pointer;"><a href="#slide-6"> <div class="ring"></div> <div class="fix"> CONTACT </div></a> </li>
+				<li id="navresult" style="cursor: pointer;"><a href="#slide-6"> <div class="ring"></div> <div class="fix"> RESULT</div></a></li>
+				<li id="navcontact" style="cursor: pointer;"><a href="#slide-7"> <div class="ring"></div> <div class="fix"> CONTACT </div></a> </li>
 
 			</ul>
 		</div> <!---header-left-->
@@ -117,11 +118,11 @@
 								<!-- <li> <div class="headline"> </div>
 									<div class="content" style="text-align:justify;"></div>
 								</li> -->
-								<li> <div class="headline"> Apogee 2018 </div>
+								<li> <div class="headline" style="margin-top: 4.5vh"> Apogee 2018 </div>
 									<div class="content" style="text-align:justify;">AAROHAN is a national level examination crafted and conducted by the students of BITS Pilani in schools. The examination is conducted for classes IX, X, XI and XII. The aim of this examination is to inculcate scientific temperament and get the coming generation interested towards scientific and technical development studies. All that only at a cost of &#8377;150 per student.
-									<!-- <a href="./result/" target="_blank"><div style="letter-spacing:0.1em;margin:20px;padding: 12px 15px;background-color: #d81e28;color:#f0f0f0;font-weight: bold;border-radius: 3px; ">
+									<a href="#slide-6"><div style="letter-spacing:0.1em;margin:20px;margin-top:5px;padding: 12px 15px;background-color: #d81e28;color:#f0f0f0;font-weight: bold;border-radius: 3px; ">
 										Check Result
-									</div></a> -->
+									</div></a>
 								</li>
 								<!-- <li> <div class="headline" >  </div>
 									<div class="content" style="text-align:justify;"></div>
@@ -248,11 +249,26 @@
 </li>
 </ul>
   </div> 
-  </div> 
+  </div>	
+  		<div class="slide" style="background: rgba(86, 128, 233,0.6)"">
+  			<div class="container-results">
+  				<div class="headline"><h1 style="color:#fff;font-size:6vh; font-weight:bolder; margin: auto; text-align: center;">RESULT</h1></div>
+  				<div class="content-container">
+  					<div class="content" style="text-align: center; display: block;">
+  						<div class="input-roll">
+  							<label>ENTER ROLL NO.</label>
+  							<input type="text" id="rollno" name="rollno" style="border-color: black;" required>
+  						</div>
+  						<input type="submit" value="CHECK" id="check-result" style="cursor: pointer;">
+  						<div id="result-txt"></div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>		
 	
 					<div class="slide" style="background: rgba(26,188,156,0.2)" >
 
-						<div id="container-contact" style="background: rgba(26,188,156,0.3);margin-top:1%;padding:2%">
+						<div id="container-contact" style="background: rgba(26,188,156,0.3);margin-top:-1.8%;padding:4%;">
 							<div class="headline"><h1 style="color:#444;font-size:6vh; font-weight:bolder">CONTACT US</h1><br><br>
 							</div>
 							<div class="content" >
@@ -296,7 +312,35 @@
 							</div>
 						</div> 
 					</div> 	 
-				</div>              
+				</div>
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$("#check-result").click(function(){
+							var roll_no = $("#rollno").val();
+							$.post("https://bits-apogee.org/2018/portal/aarohan",{
+								roll_no: roll_no
+							}, function(data){
+								console.log(data);
+								if((data["message"])!="Invalid Roll no.") {
+									$("#result-txt").html('Name: '+ data["data"]["name"]+'<br />');
+									$("#result-txt").append('Class: '+ data["data"]["class_no"]+'<br />');
+									$("#result-txt").append('All India Rank: '+ data["data"]["rank"]+'<br />');
+									$("#result-txt").append('School Rank: '+ data["data"]["school_rank"]+'<br />');
+									$("#result-txt").append('Correct: '+ data["data"]["correct"]+'<br />');
+									$("#result-txt").append('Incorrect: '+ data["data"]["incorrect"]+'<br />');
+									$("#result-txt").append('Unattempted: '+ data["data"]["unattempted"]+'<br />');
+									$("#result-txt").append('Total: '+ data["data"]["total"]+'<br />');
+
+								} else {
+									$("#result-txt").text(data["message"]);
+								}
+								console.log(data["data"]["id"]);
+							}
+							);
+						});
+					});
+				</script> 
+				
 				<script>
 					$('.nav-button').click(function(){ 
 						if ( $('.nav-button').hasClass('go-deep') ) { 

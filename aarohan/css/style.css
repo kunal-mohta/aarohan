@@ -202,7 +202,7 @@ html.fsvs #fsvs-pagination li:last-child {
 }
 .center-content img {
 	display:block;
-	margin:0 auto;
+	margin:-3.8vh auto;
 }
 .center-content .center-bottom ul
 {
@@ -226,7 +226,7 @@ html.fsvs #fsvs-pagination li:last-child {
 
 .center-content .center-bottom ul li .headline {
 	font-size:5vh;
-	margin-bottom:10px;
+	margin-bottom:6px;
 	font-weight: bold;
 	font-family:Helvetica;
 }
@@ -261,7 +261,65 @@ html.fsvs #fsvs-pagination li:last-child {
 }
 
 #slide-6 .content{
-	margin:0 15vw 0 15vw;
+	display: block;
+	margin: auto 45px;
+	width: 70vw;
+	height: 60vh;
+	font-size: 3vh;
+	padding:5vh 1vh 2vh 3vh;
+	border-radius: 2vh;
+	background: rgba(34, 38, 41,0.6);
+	text-align: center;
+}
+
+#slide-6 input {
+	display: block;
+	margin: auto;
+	margin-bottom: 4vh;
+	margin-top: 2vh;
+	width: 40vw;
+	height: 4.2vh;
+	border-radius: 5px;
+	font-size: 2.2vh;
+	color: #000;
+	cursor: auto;
+	padding-left: 1.5vh;
+}
+#slide-6 label {
+	color: #fff;
+}
+#slide-6 #check-result {
+	margin: auto;
+	display: block;
+	font-size: 3vh;
+	font-weight: 700;
+	padding: 1.5vh 0.7vw;
+	border: 1px solid #566A93;
+	border-radius: 10px;
+	background-color: #fff;
+	color: #000;
+	cursor:pointer;
+	height: 7vh;
+	width: 20vw;
+	margin-top: 2vh;
+}
+#slide-6 #result-txt {
+	color: #fff;
+	text-align: justify;
+	margin: auto;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 30vh;
+	align-items: center;
+
+}
+#slide-6 #check-result:hover {
+	background: #e5e5e5;
+}
+#slide-7 .content{
+	width: 80vw;
+	margin:auto;
 	font-size: 3vh;
 	padding:5vh 3vh 2vh 3vh;
 	border-radius: 2vh;
@@ -274,6 +332,7 @@ html.fsvs #fsvs-pagination li:last-child {
 	flex-direction: column;
 	justify-content: space-around;
 	height: 80vh;
+	align-items: center;
 }
 
 #container-school ul li {
