@@ -264,7 +264,7 @@ html.fsvs #fsvs-pagination li:last-child {
 	display: block;
 	/*margin: auto 45px;*/
 	width: 70vw;
-	height: 60vh;
+	height: 80vh;
 	font-size: 3vh;
 	padding:5vh 1vh 2vh 3vh;
 	border-radius: 2vh;
@@ -285,6 +285,29 @@ html.fsvs #fsvs-pagination li:last-child {
 
 }
 
+#slide-2 .ans-keys-container {
+	width: 95%;
+	z-index: 10000;
+	color: #fff;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+}
+
+#slide-2 a {
+	cursor: pointer;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	margin-left: 1vw;
+	margin-right: 1vw;
+}
+
+#slide-2 a:hover {
+	color: #E74D4D;
+}
 #slide-2 input {
 	display: block;
 	margin: auto;
